@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    /* background: linear-gradient( 45deg,red,blue,rgb(74, 48, 52),green); 
+      background: radial-gradient(circle,red,green,pink,blue);
+    height: 500px; 
+    background-image: url(https://www.equinetmedia.com/hubfs/How-to-find-b2b-blog-images.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(1px); */
+
+
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: brown; */
+    /* yehh lumba tarika ha  */
+    /* border: 2px solid navy; */
+    /* yehh short tarika ha  */
+    border: 10px solid blueviolet;
+    border-radius: 10%;
+}
+p{
+    padding: 40px;
+    padding-left: 70px;
+}
