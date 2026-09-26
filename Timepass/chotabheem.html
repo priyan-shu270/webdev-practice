@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chhota Bheem - CSS Art</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                #87ceeb,
+                #dff7ff
+            );
+
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           MAIN SCENE
+        ========================= */
+
+        .scene {
+            width: 700px;
+            height: 700px;
+
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                #27b9f2 0%,
+                #7ddcff 55%,
+                #72c85a 56%,
+                #39a943 100%
+            );
+
+            border: 8px solid white;
+
+            box-shadow:
+                0 0 30px rgba(0,0,0,.3),
+                inset 0 0 40px rgba(0,0,0,.2);
+        }
+
+
+        /* =========================
+           CLOUDS
+        ========================= */
+
+        .cloud {
+            position: absolute;
+
+            width: 120px;
+            height: 40px;
+
+            background: white;
+
+            border-radius: 50px;
+
+            opacity: .8;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: "";
+
+            position: absolute;
+
+            background: white;
+
+            border-radius: 50%;
+        }
+
+        .cloud::before {
+            width: 55px;
+            height: 55px;
+
+            left: 20px;
+            bottom: 10px;
+        }
+
+        .cloud::after {
+            width: 70px;
+            height: 70px;
+
+            right: 15px;
+            bottom: 5px;
+        }
+
+        .cloud1 {
+            top: 100px;
+            left: 50px;
+        }
+
+        .cloud2 {
+            top: 170px;
+            right: 50px;
+            transform: scale(.7);
+        }
+
+
+        /* =========================
+           MOUNTAINS
+        ========================= */
+
+        .mountain {
+            position: absolute;
+
+            bottom: 220px;
+
+            width: 300px;
+            height: 180px;
+
+            background: #4f9ac5;
+
+            clip-path: polygon(
+                50% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .mountain1 {
+            left: 300px;
+        }
+
+        .mountain2 {
+            right: 180px;
+            transform: scale(.7);
+        }
+
+
+        /* =========================
+           GRASS
+        ========================= */
+
+        .grass {
+            position: absolute;
+
+            bottom: 0;
+
+            width: 100%;
+            height: 250px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #70d45b 0 10px,
+                    transparent 11px
+                ),
+                radial-gradient(
+                    circle at 70% 40%,
+                    #8be36a 0 12px,
+                    transparent 13px
+                ),
+                #45b83c;
+        }
+
+
+        /* =========================
+           TREE
+        ========================= */
+
+        .tree {
+            position: absolute;
+
+            left: 30px;
+            bottom: 170px;
+
+            width: 150px;
+            height: 300px;
+        }
+
+        .trunk {
+            position: absolute;
+
+            bottom: 0;
+            left: 65px;
+
+            width: 45px;
+            height: 180px;
+
+            background: #79451d;
+
+            border-radius: 20px;
+        }
+
+        .leaves {
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: 0;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #158b36 0 55%,
+                    #087027 56% 100%
+                );
+
+            border-radius: 50%;
+
+            box-shadow:
+                30px 20px 0 #1da844,
+                -30px 30px 0 #15933a;
+        }
+
+
+        /* =========================
+           HUT
+        ========================= */
+
+        .hut {
+            position: absolute;
+
+            bottom: 180px;
+            left: 180px;
+
+            width: 130px;
+            height: 110px;
+
+            background: #d99b54;
+        }
+
+        .roof {
+            position: absolute;
+
+            top: -65px;
+            left: -20px;
+
+            width: 170px;
+            height: 100px;
+
+            background: #c98b43;
+
+            clip-path: polygon(
+                50% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .door {
+            position: absolute;
+
+            bottom: 0;
+            left: 50px;
+
+            width: 35px;
+            height: 60px;
+
+            background: #4b2b18;
+        }
+
+
+        /* =========================
+           BHEEM
+        ========================= */
+
+        .bheem {
+            position: absolute;
+
+            width: 280px;
+            height: 500px;
+
+            left: 200px;
+            bottom: 55px;
+
+            z-index: 10;
+
+            transition: transform .3s;
+        }
+
+
+        /* HEAD */
+
+        .head {
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            left: 50px;
+            top: 30px;
+
+            background: #f6a66f;
+
+            border-radius: 48% 52% 48% 48%;
+
+            border: 4px solid #8b451f;
+
+            z-index: 4;
+        }
+
+
+        /* HAIR */
+
+        .hair {
+            position: absolute;
+
+            width: 185px;
+            height: 100px;
+
+            left: 47px;
+            top: 5px;
+
+            background: #32140d;
+
+            border-radius: 70% 40% 50% 30%;
+
+            z-index: 5;
+
+            transform: rotate(-5deg);
+        }
+
+        .hair::after {
+            content: "";
+
+            position: absolute;
+
+            width: 55px;
+            height: 55px;
+
+            right: -25px;
+            top: 30px;
+
+            background: #32140d;
+
+            border-radius: 50%;
+        }
+
+
+        /* TILAK */
+
+        .tilak {
+            position: absolute;
+
+            top: 65px;
+            left: 130px;
+
+            width: 15px;
+            height: 30px;
+
+            background: #d62f2f;
+
+            border-radius: 50%;
+
+            z-index: 8;
+        }
+
+
+        /* EYES */
+
+        .eye {
+            position: absolute;
+
+            width: 42px;
+            height: 50px;
+
+            background: white;
+
+            border: 3px solid #542617;
+
+            border-radius: 50%;
+
+            top: 88px;
+
+            z-index: 8;
+        }
+
+        .eye.left {
+            left: 72px;
+        }
+
+        .eye.right {
+            left: 145px;
+        }
+
+        .eye::after {
+            content: "";
+
+            position: absolute;
+
+            width: 17px;
+            height: 22px;
+
+            background: #24120c;
+
+            border-radius: 50%;
+
+            left: 10px;
+            top: 12px;
+        }
+
+
+        /* NOSE */
+
+        .nose {
+            position: absolute;
+
+            width: 25px;
+            height: 35px;
+
+            border-right: 4px solid #9b4d29;
+
+            border-radius: 50%;
+
+            left: 128px;
+            top: 120px;
+
+            z-index: 9;
+        }
+
+
+        /* SMILE */
+
+        .mouth {
+            position: absolute;
+
+            width: 70px;
+            height: 35px;
+
+            left: 105px;
+            top: 150px;
+
+            background: #8e1930;
+
+            border-radius: 0 0 50px 50px;
+
+            z-index: 9;
+        }
+
+        .mouth::after {
+            content: "";
+
+            position: absolute;
+
+            width: 40px;
+            height: 10px;
+
+            background: #ff7180;
+
+            bottom: 5px;
+            left: 15px;
+
+            border-radius: 50%;
+        }
+
+
+        /* NECK */
+
+        .neck {
+            position: absolute;
+
+            width: 55px;
+            height: 50px;
+
+            left: 115px;
+            top: 195px;
+
+            background: #f6a66f;
+
+            z-index: 2;
+        }
+
+
+        /* BODY */
+
+        .body {
+            position: absolute;
+
+            width: 155px;
+            height: 170px;
+
+            left: 65px;
+            top: 220px;
+
+            background: #f6a66f;
+
+            border-radius: 50px 50px 30px 30px;
+
+            border: 4px solid #8b451f;
+        }
+
+
+        /* DHOTI */
+
+        .dhoti {
+            position: absolute;
+
+            width: 190px;
+            height: 145px;
+
+            left: 47px;
+            top: 350px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff7b00,
+                    #ffb300,
+                    #ff7b00
+                );
+
+            clip-path: polygon(
+                15% 0,
+                85% 0,
+                100% 100%,
+                0 100%
+            );
+
+            border-bottom: 5px solid #9b4d00;
+
+            z-index: 5;
+        }
+
+        .dhoti::before {
+            content: "";
+
+            position: absolute;
+
+            width: 10px;
+            height: 130px;
+
+            background: #d85d00;
+
+            left: 90px;
+        }
+
+
+        /* ARM */
+
+        .arm {
+            position: absolute;
+
+            width: 120px;
+            height: 50px;
+
+            background: #f6a66f;
+
+            border: 4px solid #8b451f;
+
+            border-radius: 50px;
+
+            z-index: 2;
+        }
+
+        .arm.left {
+            left: -35px;
+            top: 245px;
+
+            transform: rotate(35deg);
+        }
+
+        .arm.right {
+            right: -45px;
+            top: 225px;
+
+            transform: rotate(-55deg);
+        }
+
+
+        /* FIST */
+
+        .fist {
+            position: absolute;
+
+            width: 60px;
+            height: 65px;
+
+            background: #f6a66f;
+
+            border: 4px solid #8b451f;
+
+            border-radius: 45%;
+
+            z-index: 5;
+        }
+
+        .fist.left {
+            left: -15px;
+            top: 215px;
+        }
+
+        .fist.right {
+            right: -5px;
+            top: 170px;
+        }
+
+
+        /* GOLDEN BANDS */
+
+        .band {
+            position: absolute;
+
+            width: 35px;
+            height: 20px;
+
+            background: #ffd700;
+
+            border: 2px solid #a56b00;
+
+            border-radius: 10px;
+
+            z-index: 8;
+        }
+
+        .band1 {
+            left: 15px;
+            top: 265px;
+        }
+
+        .band2 {
+            right: 10px;
+            top: 215px;
+        }
+
+
+        /* NECKLACE */
+
+        .necklace {
+            position: absolute;
+
+            width: 70px;
+            height: 45px;
+
+            left: 108px;
+            top: 205px;
+
+            border: 5px solid #ffd700;
+
+            border-top: none;
+
+            border-radius: 0 0 50px 50px;
+
+            z-index: 10;
+        }
+
+        .necklace::after {
+            content: "";
+
+            position: absolute;
+
+            width: 22px;
+            height: 22px;
+
+            background: #ffd700;
+
+            border-radius: 50%;
+
+            left: 19px;
+            top: 25px;
+        }
+
+
+        /* SHOES */
+
+        .shoe {
+            position: absolute;
+
+            width: 90px;
+            height: 45px;
+
+            background: #4a2116;
+
+            border-radius: 50%;
+
+            bottom: 5px;
+
+            z-index: 8;
+        }
+
+        .shoe.left {
+            left: 40px;
+        }
+
+        .shoe.right {
+            right: 30px;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title {
+            position: absolute;
+
+            right: 35px;
+            top: 120px;
+
+            text-align: center;
+
+            font-weight: 900;
+
+            font-size: 40px;
+
+            line-height: .9;
+
+            transform: rotate(-3deg);
+
+            z-index: 20;
+
+            text-shadow:
+                3px 3px 0 #111,
+                -2px -2px 0 #111,
+                2px -2px 0 #111,
+                -2px 2px 0 #111;
+        }
+
+        .title span:first-child {
+            color: #ffe600;
+        }
+
+        .title span:last-child {
+            color: #ff6600;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        button {
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #ff6600;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,.3);
+        }
+
+        button:hover {
+            background: #e65300;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="scene">
+
+        <!-- SKY -->
+
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+
+        <!-- MOUNTAINS -->
+
+        <div class="mountain mountain1"></div>
+        <div class="mountain mountain2"></div>
+
+        <!-- TREE -->
+
+        <div class="tree">
+            <div class="leaves"></div>
+            <div class="trunk"></div>
+        </div>
+
+        <!-- HUT -->
+
+        <div class="hut">
+            <div class="roof"></div>
+            <div class="door"></div>
+        </div>
+
+        <!-- GRASS -->
+
+        <div class="grass"></div>
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+            <span>CHHOTA</span><br>
+            <span>BHEEM</span>
+        </div>
+
+
+        <!-- BHEEM -->
+
+        <div class="bheem" id="bheem">
+
+            <div class="hair"></div>
+
+            <div class="head">
+
+                <div class="tilak"></div>
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="nose"></div>
+
+                <div class="mouth"></div>
+
+            </div>
+
+
+            <div class="neck"></div>
+
+            <div class="body"></div>
+
+            <div class="necklace"></div>
+
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+
+            <div class="fist left"></div>
+            <div class="fist right"></div>
+
+            <div class="band band1"></div>
+            <div class="band band2"></div>
+
+            <div class="dhoti"></div>
+
+            <div class="shoe left"></div>
+            <div class="shoe right"></div>
+
+        </div>
+
+    </div>
+
+
+    <button onclick="powerUp()">
+        💪 Power Up!
+    </button>
+
+
+    <script>
+
+        function powerUp() {
+
+            const bheem = document.getElementById("bheem");
+
+            bheem.style.transform = "scale(1.15)";
+
+            setTimeout(() => {
+                bheem.style.transform = "scale(1)";
+            }, 500);
+
+        }
+
+    </script>
+
+</body>
+</html>
