@@ -1,4 +1,32 @@
-#class{
-    color: rgb(35, 181, 52);
-    font-size: 20px;
-   } 
+/* Universal selector: applies to every element */
+* {
+font-family: Arial, sans-serif;
+}
+/* Element selector */
+p {
+color: #333333;
+font-size: 16px;
+}
+/* Class selector (starts with a dot) */
+.highlight {
+background-color: yellow;
+padding: 5px;
+}
+/* Id selector (starts with #) */
+#intro {
+color: navy;
+font-size: 20px;
+}
+/* Group selector: same style for many elements */
+h1, a {
+color: darkgreen;
+}
+/* Descendant selector: every p inside .card */
+.card p {
+font-style: italic;
+border: 2px solid black;
+}
+/* Pseudo-class: style while the mouse is over the link */
+a:hover {
+color: red;
+}
