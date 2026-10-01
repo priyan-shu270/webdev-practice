@@ -1,0 +1,265 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Practice</title>
+
+    <style>
+
+        .card {
+            width: 300px;
+
+            /* Space outside the card */
+            margin: 30px auto;
+
+            /* Space inside the card */
+            padding: 20px;
+
+            /* Border around the card */
+            border: 3px solid black;
+
+            background-color: lightblue;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .hero {
+            height: 100vh;
+
+            background-color: lightcoral;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+        }
+
+
+        /* =====================================
+           3. RESPONSIVE WIDTH USING vw
+        ===================================== */
+
+        .vw-container {
+            width: 80vw;
+
+            margin: 30px auto;
+            padding: 30px;
+
+            background-color: lightgreen;
+
+            text-align: center;
+        }
+
+
+        /* =====================================
+           4. rem vs em
+        ===================================== */
+
+        html {
+            font-size: 16px;
+        }
+
+        .rem-heading {
+            font-size: 2rem;
+        }
+
+        .em-parent {
+            font-size: 20px;
+        }
+
+        .em-heading {
+            font-size: 2em;
+        }
+
+
+        /* =====================================
+           5. BLOCK, INLINE, INLINE-BLOCK
+        ===================================== */
+
+        .box {
+            background-color: orange;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .block-box {
+            display: block;
+        }
+
+        .inline-box {
+            display: inline;
+        }
+
+        .inline-block-box {
+            display: inline-block;
+        }
+
+
+        /* =====================================
+           6. RELATIVE + ABSOLUTE
+        ===================================== */
+
+        .profile-card {
+            position: relative;
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            padding: 30px;
+
+            border: 2px solid black;
+            border-radius: 10px;
+
+            background-color: white;
+
+            text-align: center;
+        }
+
+        .new-badge {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            background-color: red;
+            color: white;
+
+            padding: 5px 10px;
+
+            border-radius: 15px;
+
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         1. CARD
+    ===================================== -->
+
+    <div class="card">
+
+        <h2>My Card</h2>
+
+        <p>
+            This card demonstrates margin,
+            padding and border.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         2. FULL SCREEN HERO
+    ===================================== -->
+
+    <section class="hero">
+
+        <div>
+            <h1>Welcome</h1>
+
+            <p>
+                This section is 100vh tall.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         3. VW CONTAINER
+    ===================================== -->
+
+    <div class="vw-container">
+
+        <h2>Responsive Width</h2>
+
+        <p>
+            This container has a width of 80vw.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         4. REM vs EM
+    ===================================== -->
+
+    <h1 class="rem-heading">
+        This is 2rem
+    </h1>
+
+
+    <div class="em-parent">
+
+        <h1 class="em-heading">
+            This is 2em
+        </h1>
+
+    </div>
+
+
+    <!-- =====================================
+         5. BLOCK
+    ===================================== -->
+
+    <div class="box block-box">
+        Block Box
+    </div>
+
+
+    <!-- =====================================
+         INLINE
+    ===================================== -->
+
+    <span class="box inline-box">
+        Inline Box
+    </span>
+
+    <span class="box inline-box">
+        Inline Box
+    </span>
+
+
+    <!-- =====================================
+         INLINE-BLOCK
+    ===================================== -->
+
+    <div class="box inline-block-box">
+        Inline-Block Box
+    </div>
+
+    <div class="box inline-block-box">
+        Inline-Block Box
+    </div>
+
+
+    <!-- =====================================
+         6. RELATIVE + ABSOLUTE BADGE
+    ===================================== -->
+
+    <div class="profile-card">
+
+        <span class="new-badge">
+            New
+        </span>
+
+        <h2>P
+```
