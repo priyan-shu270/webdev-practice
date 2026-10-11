@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+     box-sizing: border-box;
+     /* bottom: 50px; */
+}
+.parent{
+    display: grid;
+    width: 1000px;
+    margin: auto;
+    min-height: 50vh;
+   grid-template-columns: repeat(4,1fr);
+   gap: 10px;
+
+}
+.child{
+  border: 2px solid black;
+}
+#one{
+    grid-row: 1/4;
+    background-color: green;
+}
+#two{
+    grid-column: 2/4;
+    background-color: green;
+}
+#three{
+  grid-column: 4/5;
+   background-color: red;
+}
+#four{
+background-color: yellow;
+}
+#five{
+background-color: red;
+}
+#six{
+    grid-column: 4/5;
+    grid-row: 2/4;
+      background-color: green;
+}
+#seven{
+    background-color: red;
+}
+#eight{
+     background-color: yellow;  
+}
