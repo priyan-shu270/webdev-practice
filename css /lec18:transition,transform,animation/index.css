@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    /* transition-duration: 2s;
+    transition-property: all; */
+    animation: hii;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes hii {
+    from{
+        background-color: rgb(235, 117, 14);
+    }
+    to{
+         background-color: rgb(3, 170, 95);
+         transform:translate(30px,50px);
+    }
+    
+}
+/* .box:hover{
+    background-color: purple;
+
+} */
